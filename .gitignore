@@ -1,0 +1,6 @@
+# system  and python files
+.DS_Store
+__pycache__
+.venv/
+.vscode
+*.code-workspace
