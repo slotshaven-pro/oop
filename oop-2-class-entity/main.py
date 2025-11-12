@@ -1,16 +1,21 @@
+import random
 from database import Database
+from user import User
 
-db = Database() # opret et objekt af typen database
+# opret et objekt af typen database
+db = Database()
 print(db.load(1))
-# lav en søgning og vis resultat
-user = "mkm"
-print(db.search(user))
 
-# opret en ny post
-db.insert(uid = 232, name = "Henrik", password = "hemmeligt")
+# lav en søgning og vis resultat
+print(db.search("mkm"))
+
+# lav tilfældig bruger og opret en ny post
+uid = random.randint(1_000, 9_999)
+random_user = User(uid, f"user_{uid}", f"user_{uid}")
+db.insert(random_user)
 
 # hent den nye post og vis den
-print(db.load(232))
+print(db.load(uid))
 
 # vis alle rækker
 print(db.load_all())
