@@ -1,4 +1,3 @@
-""" sqlite3 adds lightweight database capabilites """
 import sqlite3
 from pathlib import Path
 import random
@@ -49,7 +48,7 @@ class Database:
         for u in d["rows"]:
             user = User(u['uid'], u['uname'], u['password'])
             l.append(user)
-        return self._run_query(query, params)
+        return l
 
     def load(self, user_id) -> User:
         """ returns single User instance """
@@ -63,8 +62,13 @@ class Database:
     def load_all(self):
         """ returns list of Users """
         query = "SELECT * FROM user"
-        # return list of User instances
-        return self._run_query(query, ())
+        params = ()
+        d = self._run_query(query, params)
+        l = []
+        for u in d["rows"]:
+            user = User(u['uid'], u['uname'], u['password'])
+            l.append(user)
+        return l
 
     def insert(self, user: User) -> None:
         """ Inserts a User instance """
