@@ -29,3 +29,6 @@ class User:
     def set_password(self, password: str) -> None:
         """" docstring """
         self._password = password
+
+    def __str__(self):
+        return f'Username: {self._uname}'
