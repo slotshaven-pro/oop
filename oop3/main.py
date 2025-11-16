@@ -4,7 +4,7 @@ from user import User
 
 # opret et objekt af typen database
 db = Database()
-print(db.load(1))
+print(db.load(2567))
 
 # lav en søgning og vis resultat
 print(db.search("mkm"))

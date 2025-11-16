@@ -4,5 +4,5 @@ __pycache__
 .venv/
 .vscode
 *.code-workspace
-oop-1-class-db/users.db
-oop-2-class-entity/users.db
+oop*/*.db
+
