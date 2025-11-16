@@ -18,9 +18,17 @@ Brug `user.py` som reference eller skabelon, når du bygger din egen entitetskla
 
 Kig på din egen database fra flask-projektet og byg en tilsvarende klasse for din egen entitet. Indeholder din database fx film, kunstværker, webshops, skal du bygge en klasse sådan her:
 
-- class Film i filen `film.py`
-- class Artwork i filen `artwork.py`
-- class Webshopi filen `webshop.py`
+- class `Film` i filen `film.py`
+- class `Artwork` i filen `artwork.py`
+- class `Webshop` i filen `webshop.py`
+
+Dit klassenavn skal begynde med STORT forbogstav og være i ENTAL - den repræsenterer ET objekt (svarende til en række i databasen).
+
+Eksempel med film - i `film.py` begynder du sådan her:
+
+```python
+class Film:
+```
 
 Tilføj som minimum en constructor `__init__()` med de nødvendige parametre og den "magiske" metode `__str__()` som kaldes når objektet printes.
 
@@ -34,3 +42,4 @@ if __name__ == "__main__":
     # Create random user name and password from uid
     random_user = User(uid, f"user_{uid}", f"user_{uid}")
 ```
+
